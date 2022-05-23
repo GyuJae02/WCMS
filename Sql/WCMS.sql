@@ -12,6 +12,20 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+
+-- wato_commuting_management_db 데이터베이스 구조 내보내기
+CREATE DATABASE IF NOT EXISTS `wato_commuting_management_db` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `wato_commuting_management_db`;
+
+-- 테이블 wato_commuting_management_db.commuting_history_tb 구조 내보내기
+CREATE TABLE IF NOT EXISTS `commuting_history_tb` (
+  `date_key` varchar(50) NOT NULL COMMENT 'pk 키',
+  `name` varchar(50) DEFAULT NULL COMMENT '이름',
+  `attendance` datetime DEFAULT NULL COMMENT '출근 시간',
+  `leave_work` datetime DEFAULT NULL COMMENT '퇴근 시간',
+  PRIMARY KEY (`date_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='근태 관리';
+
 -- 테이블 데이터 wato_commuting_management_db.commuting_history_tb:~68 rows (대략적) 내보내기
 DELETE FROM `commuting_history_tb`;
 /*!40000 ALTER TABLE `commuting_history_tb` DISABLE KEYS */;
@@ -86,10 +100,30 @@ INSERT INTO `commuting_history_tb` (`date_key`, `name`, `attendance`, `leave_wor
 	('20220523이재규', '이재규', '2022-05-23 08:52:54', '2022-05-23 18:00:00');
 /*!40000 ALTER TABLE `commuting_history_tb` ENABLE KEYS */;
 
+-- 테이블 wato_commuting_management_db.forum_comment_tb 구조 내보내기
+CREATE TABLE IF NOT EXISTS `forum_comment_tb` (
+  `forum_id` varchar(50) NOT NULL COMMENT '게시글 id',
+  `comment` varchar(50) DEFAULT NULL COMMENT '댓글',
+  `add_date` datetime DEFAULT NULL COMMENT '댓글 추가 시간',
+  PRIMARY KEY (`forum_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- 테이블 데이터 wato_commuting_management_db.forum_comment_tb:~0 rows (대략적) 내보내기
 DELETE FROM `forum_comment_tb`;
 /*!40000 ALTER TABLE `forum_comment_tb` DISABLE KEYS */;
 /*!40000 ALTER TABLE `forum_comment_tb` ENABLE KEYS */;
+
+-- 테이블 wato_commuting_management_db.forum_tb 구조 내보내기
+CREATE TABLE IF NOT EXISTS `forum_tb` (
+  `pk` varchar(50) NOT NULL COMMENT '제목 + 이름',
+  `title` varchar(50) DEFAULT NULL COMMENT '제목',
+  `content` varchar(20000) DEFAULT NULL COMMENT '내용',
+  `name` varchar(50) DEFAULT NULL COMMENT '작성자',
+  `type` varchar(50) DEFAULT NULL COMMENT '글 타입',
+  `create date` datetime DEFAULT NULL COMMENT '생성일',
+  `last_revised_date` datetime DEFAULT NULL COMMENT '마지막 수정일',
+  PRIMARY KEY (`pk`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='게시판';
 
 -- 테이블 데이터 wato_commuting_management_db.forum_tb:~2 rows (대략적) 내보내기
 DELETE FROM `forum_tb`;
@@ -99,6 +133,19 @@ INSERT INTO `forum_tb` (`pk`, `title`, `content`, `name`, `type`, `create date`,
 	('게시판 테스트 이재규', '게시판 테스트', '게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트게시판 테스트\r\n게시판 테스트게시판 테스트', '이재규', '일반', '2022-01-18 13:55:10', '2022-01-18 17:30:41');
 /*!40000 ALTER TABLE `forum_tb` ENABLE KEYS */;
 
+-- 테이블 wato_commuting_management_db.user_tb 구조 내보내기
+CREATE TABLE IF NOT EXISTS `user_tb` (
+  `name` varchar(20) NOT NULL COMMENT '이름',
+  `position` varchar(10) DEFAULT NULL COMMENT '직급',
+  `vacation_count` float NOT NULL DEFAULT 15 COMMENT '잔여 휴가일',
+  `mail` varchar(50) DEFAULT NULL COMMENT '메일',
+  `pin_pw` varchar(5000) DEFAULT NULL COMMENT '핀(4자리) 패스워드',
+  `online_check` varchar(10) NOT NULL DEFAULT 'offline' COMMENT '온라인 체크',
+  `authority` varchar(10) DEFAULT 'user' COMMENT '권한',
+  `memo` varchar(15000) DEFAULT NULL COMMENT '메모',
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='유저 관리';
+
 -- 테이블 데이터 wato_commuting_management_db.user_tb:~3 rows (대략적) 내보내기
 DELETE FROM `user_tb`;
 /*!40000 ALTER TABLE `user_tb` DISABLE KEYS */;
@@ -107,6 +154,15 @@ INSERT INTO `user_tb` (`name`, `position`, `vacation_count`, `mail`, `pin_pw`, `
 	('이재규', '사원', 4.5, 'jk.lee@watosolution.com', '41c991eb6a66242c0454191244278183ce58cf4a6bcd372f799e4b9cc01886af', 'offline', 'admin', ''),
 	('테스트', '테스트', 15, '', '3b47492744946d5a188be73c702fb2e3cd1b635433f841381ae8d2e0ed67b45f', 'offline', 'user', 'memo add test');
 /*!40000 ALTER TABLE `user_tb` ENABLE KEYS */;
+
+-- 테이블 wato_commuting_management_db.vacation_tb 구조 내보내기
+CREATE TABLE IF NOT EXISTS `vacation_tb` (
+  `date_key` varchar(50) NOT NULL COMMENT '날짜+이름 pk',
+  `name` varchar(50) DEFAULT NULL COMMENT '이름',
+  `vac_type` varchar(50) DEFAULT NULL COMMENT '휴가 타입',
+  `vac_date` datetime DEFAULT NULL COMMENT '휴가일',
+  PRIMARY KEY (`date_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='휴가 관리';
 
 -- 테이블 데이터 wato_commuting_management_db.vacation_tb:~12 rows (대략적) 내보내기
 DELETE FROM `vacation_tb`;
