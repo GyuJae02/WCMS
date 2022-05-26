@@ -44,28 +44,29 @@ namespace Wato_Commuting_management
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(153, 48);
+            this.label1.Location = new System.Drawing.Point(175, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 23);
+            this.label1.Size = new System.Drawing.Size(187, 29);
             this.label1.TabIndex = 14;
-            this.label1.Text = "* 최근 100일 데이터";
+            this.label1.Text = "* 최근 1년 데이터";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // historylistView
             // 
             this.historylistView.HideSelection = false;
-            this.historylistView.Location = new System.Drawing.Point(12, 101);
+            this.historylistView.Location = new System.Drawing.Point(14, 126);
+            this.historylistView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.historylistView.Name = "historylistView";
-            this.historylistView.Size = new System.Drawing.Size(305, 307);
+            this.historylistView.Size = new System.Drawing.Size(348, 383);
             this.historylistView.TabIndex = 3;
             this.historylistView.UseCompatibleStateImageBehavior = false;
             // 
             // Vaccountlabel
             // 
             this.Vaccountlabel.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Vaccountlabel.Location = new System.Drawing.Point(12, 48);
+            this.Vaccountlabel.Location = new System.Drawing.Point(14, 60);
             this.Vaccountlabel.Name = "Vaccountlabel";
-            this.Vaccountlabel.Size = new System.Drawing.Size(135, 23);
+            this.Vaccountlabel.Size = new System.Drawing.Size(154, 29);
             this.Vaccountlabel.TabIndex = 15;
             this.Vaccountlabel.Text = "Null";
             this.Vaccountlabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -74,31 +75,34 @@ namespace Wato_Commuting_management
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(131, 78);
+            this.label3.Location = new System.Drawing.Point(150, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(18, 13);
+            this.label3.Size = new System.Drawing.Size(21, 17);
             this.label3.TabIndex = 23;
             this.label3.Text = "~";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(11, 74);
+            this.dateTimePicker1.Location = new System.Drawing.Point(13, 92);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(116, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(132, 25);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(154, 74);
+            this.dateTimePicker2.Location = new System.Drawing.Point(176, 92);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(116, 21);
+            this.dateTimePicker2.Size = new System.Drawing.Size(132, 25);
             this.dateTimePicker2.TabIndex = 1;
             // 
             // Okbutton
             // 
-            this.Okbutton.Location = new System.Drawing.Point(161, 414);
+            this.Okbutton.Location = new System.Drawing.Point(184, 518);
+            this.Okbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Okbutton.Name = "Okbutton";
-            this.Okbutton.Size = new System.Drawing.Size(169, 33);
+            this.Okbutton.Size = new System.Drawing.Size(193, 41);
             this.Okbutton.TabIndex = 5;
             this.Okbutton.Text = "확인";
             this.Okbutton.UseSelectable = true;
@@ -106,9 +110,10 @@ namespace Wato_Commuting_management
             // 
             // Deletebutton
             // 
-            this.Deletebutton.Location = new System.Drawing.Point(0, 414);
+            this.Deletebutton.Location = new System.Drawing.Point(0, 518);
+            this.Deletebutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Deletebutton.Name = "Deletebutton";
-            this.Deletebutton.Size = new System.Drawing.Size(162, 33);
+            this.Deletebutton.Size = new System.Drawing.Size(185, 41);
             this.Deletebutton.TabIndex = 4;
             this.Deletebutton.Text = "삭제";
             this.Deletebutton.UseSelectable = true;
@@ -116,9 +121,10 @@ namespace Wato_Commuting_management
             // 
             // oksearchbutton
             // 
-            this.oksearchbutton.Location = new System.Drawing.Point(276, 74);
+            this.oksearchbutton.Location = new System.Drawing.Point(315, 92);
+            this.oksearchbutton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.oksearchbutton.Name = "oksearchbutton";
-            this.oksearchbutton.Size = new System.Drawing.Size(41, 21);
+            this.oksearchbutton.Size = new System.Drawing.Size(47, 26);
             this.oksearchbutton.TabIndex = 2;
             this.oksearchbutton.Text = "검색";
             this.oksearchbutton.UseSelectable = true;
@@ -126,9 +132,9 @@ namespace Wato_Commuting_management
             // 
             // Vachistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 447);
+            this.ClientSize = new System.Drawing.Size(377, 559);
             this.Controls.Add(this.oksearchbutton);
             this.Controls.Add(this.Deletebutton);
             this.Controls.Add(this.Okbutton);
@@ -139,9 +145,11 @@ namespace Wato_Commuting_management
             this.Controls.Add(this.label1);
             this.Controls.Add(this.historylistView);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Vachistory";
+            this.Padding = new System.Windows.Forms.Padding(23, 75, 23, 25);
             this.Resizable = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "내 휴가 조회";

@@ -18,7 +18,7 @@ namespace Wato_Commuting_management
         {
             InitializeComponent();
 
-            dateTimePicker1.Value = DateTime.Now.AddMonths(-1);
+            dateTimePicker1.Value = DateTime.Now.AddYears(-1);
 
             listboxstyle();
         }
@@ -47,7 +47,7 @@ namespace Wato_Commuting_management
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataReader rdr = cmd.ExecuteReader();
                     historylistView1.BeginUpdate();
-                    ListViewItem[] lvi = new ListViewItem[100];
+                    ListViewItem[] lvi = new ListViewItem[364];
                     int lvi_count = 0;
 
                     while (rdr.Read())
