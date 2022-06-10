@@ -1,5 +1,6 @@
 ﻿using log4net;
 using System.IO;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace Wato_Commuting_management
@@ -36,6 +37,18 @@ namespace Wato_Commuting_management
                 XmlSerializer xs = new XmlSerializer(typeof(T));
                 return (T)xs.Deserialize(reader);
             }
+        }
+
+        public static void CreateXml()
+        {
+            XElement doc = new XElement("Config",
+                           new XElement("DB", "Server=192.168.0.240; Port=3306; Database=wato_commuting_management_db; Uid=root; Pwd=wato1201; convert zero datetime=True;"),
+                           new XElement("ID", ""),
+                           new XElement("PW", ""),
+                           new XElement("Account_save_check", "")
+                           );
+
+            doc.Save(@"config.xml");
         }
     }
 

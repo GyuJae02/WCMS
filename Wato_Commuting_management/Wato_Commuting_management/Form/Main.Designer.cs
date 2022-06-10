@@ -110,11 +110,11 @@ namespace Wato_Commuting_management
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(893, 585);
+            this.label1.Location = new System.Drawing.Point(926, 587);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.Size = new System.Drawing.Size(37, 12);
             this.label1.TabIndex = 19;
-            this.label1.Text = "v1.0.1 beta";
+            this.label1.Text = "v1.0.2";
             // 
             // Calendar
             // 
