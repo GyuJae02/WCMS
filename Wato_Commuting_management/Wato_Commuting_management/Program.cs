@@ -18,25 +18,37 @@ namespace Wato_Commuting_management
         {
             log.Info("=============  Started Client application  =============");
 
-            if (GetExternalIPAddress() != "121.137.90.73")
+            FileInfo fi = new FileInfo(@"config.xml");
+            if (!fi.Exists)
             {
-                MessageBox.Show("와토솔루션 본사에서만 사용하실 수 있습니다.", "접근 거부 알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                se_de.CreateXml();
             }
-            else
-            {
-                FileInfo fi = new FileInfo(@"config.xml");
-                if (!fi.Exists)
-                {
-                    se_de.CreateXml();
-                }
 
-                DB_info_xml.DB_info_xml_read();
+            DB_info_xml.DB_info_xml_read();
 
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Login());
-            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Login());
+
+            //if (GetExternalIPAddress() != "121.137.90.73")
+            //{
+            //    MessageBox.Show("와토솔루션 본사에서만 사용하실 수 있습니다.", "접근 거부 알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //else
+            //{
+            //    FileInfo fi = new FileInfo(@"config.xml");
+            //    if (!fi.Exists)
+            //    {
+            //        se_de.CreateXml();
+            //    }
+
+            //    DB_info_xml.DB_info_xml_read();
+
+            //    Application.EnableVisualStyles();
+            //    Application.SetCompatibleTextRenderingDefault(false);
+            //    Application.Run(new Login());
+            //}
         }
 
         public static string GetExternalIPAddress()

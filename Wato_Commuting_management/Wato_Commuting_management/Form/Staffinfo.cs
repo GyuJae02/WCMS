@@ -1,8 +1,11 @@
 ﻿using System;
 using log4net;
+using System.Net;
 using System.Drawing;
 using MetroFramework;
+using System.Threading;
 using System.Reflection;
+using System.Net.Sockets;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -132,6 +135,42 @@ namespace Wato_Commuting_management
         private void Staffinfo_FormClosed(object sender, FormClosedEventArgs e)
         {
             _main.Staffinfobutton1.BackColor = Color.SkyBlue;
+        }
+
+        private void Chat_send_Button_Click(object sender, EventArgs e)
+        {
+            string date_now = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(DB_info_xml.db_info))
+                {
+                    conn.Open();
+                    string sql = $"INSERT INTO chat_tb VALUES ('{Chat_id_add()}', '{Login.name}', '{date_now}', '{Chat_send_textBox.Text}')";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+
+                    }
+                    rdr.Close();
+                    log.Info($"{sql}");
+                }
+
+                Chat_send_textBox.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MetroMessageBox.Show(this, $"채팅을 전송에 실패했습니다.", "알림", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                log.Error($"An exception occurred from {MethodBase.GetCurrentMethod().Name}", ex);
+                return;
+            }
+        }
+
+        private string Chat_id_add()
+        {
+            string date_key = $"{DateTime.Now.ToString("yyyyMMddHHmmss")}{Login.name}";
+            return date_key;
         }
     }
 }
