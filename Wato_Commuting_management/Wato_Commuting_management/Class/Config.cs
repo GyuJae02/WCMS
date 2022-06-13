@@ -42,8 +42,8 @@ namespace Wato_Commuting_management
         public static void CreateXml()
         {
             XElement doc = new XElement("Config",
-                           new XElement("DB", "Server=127.0.0.1; Port=3306; Database=wato_commuting_management_db; Uid=root; Pwd=0273; convert zero datetime=True;"),
-                           //new XElement("DB", "Server=192.168.0.240; Port=3306; Database=wato_commuting_management_db; Uid=root; Pwd=wato1201; convert zero datetime=True;"),
+                           //new XElement("DB", "Server=127.0.0.1; Port=3306; Database=wato_commuting_management_db; Uid=root; Pwd=0273; convert zero datetime=True;"),
+                           new XElement("DB", "Server=192.168.0.240; Port=3306; Database=wato_commuting_management_db; Uid=root; Pwd=wato1201; convert zero datetime=True;"),
                            new XElement("ID", ""),
                            new XElement("PW", ""),
                            new XElement("Account_save_check", "")
